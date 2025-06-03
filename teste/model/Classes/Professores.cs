@@ -45,12 +45,11 @@ namespace teste.model.classes
             Phone = phone;
             CPF = cpf;
             DataNascimento = dataNascimento;
-            Matricula = (ListaProfessores.Count + 1).ToString("D4");
+            Matricula = "P" + (ListaProfessores.Count + 1).ToString("D4");
 
             if (ListaProfessores.Any(p => p.CPF == cpf))
                 throw new Exception("Professor já cadastrado com este CPF.");
 
-            ListaProfessores.Add(this);
             curso.Professor = this;
         }
 

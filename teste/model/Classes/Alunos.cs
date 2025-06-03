@@ -42,7 +42,7 @@ namespace teste.model.classes
             Phone = phone;
             CPF = cpf;
             DataNascimento = dataNascimento;
-            Matricula = DateTime.Now.Year.ToString() + (ListaAlunos.Count + 1).ToString("D4");
+            Matricula = "A" + DateTime.Now.Year.ToString() + (ListaAlunos.Count + 1).ToString("D4");
             CursosMatriculados = listaCursos;
         }
 

@@ -23,7 +23,7 @@ namespace teste.model.classes
             if (cargaHoraria <= 0)
                 throw new Exception("A carga horária deve ser maior que zero.");
 
-            ID = (ListaCursos.Count + 1).ToString("D4");
+            ID = "C" + (ListaCursos.Count + 1).ToString("D4");
             Nome = nome;
             CargaHoraria = cargaHoraria;
         }

@@ -22,6 +22,25 @@ namespace teste
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            listViewAlunos.Columns.Add("Matrícula", 100);
+            listViewAlunos.Columns.Add("Nome", 150);
+            listViewAlunos.Columns.Add("Email", 150);
+            listViewAlunos.Columns.Add("CPF", 100);
+            listViewAlunos.Columns.Add("Telefone", 100);
+            listViewAlunos.Columns.Add("Nascimento", 100);
+            listViewAlunos.Columns.Add("Cursos", 200);
+
+            listViewCursos.Columns.Add("ID", 80);
+            listViewCursos.Columns.Add("Nome", 150);
+            listViewCursos.Columns.Add("Carga Horária", 100);
+
+            listViewProfessores.Columns.Add("Matrícula", 100);
+            listViewProfessores.Columns.Add("Nome", 150);
+            listViewProfessores.Columns.Add("Email", 150);
+            listViewProfessores.Columns.Add("Telefone", 100);
+            listViewProfessores.Columns.Add("Nascimento", 100);
+            listViewProfessores.Columns.Add("Curso", 150);
+
 
         }
 
@@ -42,13 +61,6 @@ namespace teste
 
         private void SendFormButton_Click(object sender, EventArgs e)
         {
-            // List<Cursos> cursosSelecionados = CheckListCursosAlunos.CheckedItems
-            // .Cast<Cursos>()
-            // .ToList();
-
-            //Alunos alunoteste = new Alunos(NameTextBox.Text, EmailTextBox.Text, CelTextBox.Text, CpfTextBox.Text, DatNascTextBox.Text, cursosSelecionados);
-            //Alunos.ListaAlunos.Add(new Alunos(NameTextBox.Text, EmailTextBox.Text, CelTextBox.Text, CpfTextBox.Text, DatNascTextBox.Text, cursosSelecionados));
-            //MessageBox.Show("Aluno cadastrado com sucesso!");
             try
             {
                 List<Cursos> cursosSelecionados = CheckListCursosAlunos.CheckedItems
@@ -65,6 +77,7 @@ namespace teste
                 );
 
                 Alunos.ListaAlunos.Add(novoAluno);
+                AtualizarListaAlunos();
                 MessageBox.Show("Aluno cadastrado com sucesso!");
             }
             catch (Exception ex)
@@ -144,6 +157,7 @@ namespace teste
                 Cursos curso = new Cursos(NomeCursoTxtBox.Text, cargaHoraria);
 
                 Cursos.ListaCursos.Add(curso);
+                AtualizarListaCursos();
                 MessageBox.Show("Curso cadastrado com sucesso!");
 
                 CursosProf.Items.Clear();
@@ -185,6 +199,8 @@ namespace teste
                     cursoProfessor
                 );
 
+                Professores.ListaProfessores.Add(professor);
+                AtualizarListaProfessores();
                 MessageBox.Show("Professor cadastrado com sucesso!");
             }
             catch (Exception ex)
@@ -202,6 +218,68 @@ namespace teste
         private void ListarProfessores_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Lista de Professores:\n" + string.Join("\n", Professores.ListaProfessores.Select(a => $"{a.Name} - {a.Email} - {a.CPF} - {a.Phone} - {a.DataNascimento} - {Cursos.ListaCursos.Where(curso => curso.Professor.Matricula == a.Matricula).Select(curso => curso.Nome).FirstOrDefault()}")));
+        }
+
+
+
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AtualizarListaAlunos()
+        {
+            listViewAlunos.Items.Clear();
+
+            foreach (var aluno in Alunos.ListaAlunos)
+            {
+                var cursos = string.Join(", ", aluno.CursosMatriculados.Select(c => c.Nome));
+                var item = new ListViewItem(new[]
+                {
+            aluno.Matricula, aluno.Name, aluno.Email, aluno.CPF, aluno.Phone, aluno.DataNascimento, cursos
+        });
+
+                listViewAlunos.Items.Add(item);
+            }
+        }
+
+        private void listViewCursos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AtualizarListaCursos()
+        {
+            listViewCursos.Items.Clear();
+
+            foreach (var curso in Cursos.ListaCursos)
+            {
+                var item = new ListViewItem(new[]
+                {
+            curso.ID, curso.Nome, curso.CargaHoraria.ToString()
+        });
+
+                listViewCursos.Items.Add(item);
+            }
+        }
+
+        private void AtualizarListaProfessores()
+        {
+
+            Cursos cursoProfessor = (Cursos)CursosProf.SelectedItem;
+
+            listViewProfessores.Items.Clear();
+
+            foreach (var prof in Professores.ListaProfessores)
+            {
+                var item = new ListViewItem(new[]
+                {
+            prof.Matricula, prof.Name, prof.Email, prof.Phone, prof.DataNascimento, cursoProfessor.Nome
+        });
+
+                listViewProfessores.Items.Add(item);
+            }
         }
     }
 }
