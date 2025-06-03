@@ -9,7 +9,7 @@ namespace teste.model.Abstractions
 {
     public abstract class AbstractCursos
     {
-        public Guid ID { get; set; } = Guid.NewGuid();
+        public string ID { get; set; } 
         public string Nome { get; set; }
         public int CargaHoraria { get; set; }
 

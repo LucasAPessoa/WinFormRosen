@@ -42,14 +42,36 @@ namespace teste
 
         private void SendFormButton_Click(object sender, EventArgs e)
         {
-            List<Cursos> cursosSelecionados = CheckListCursosAlunos.CheckedItems
-            .Cast<Cursos>()
-            .ToList();
+            // List<Cursos> cursosSelecionados = CheckListCursosAlunos.CheckedItems
+            // .Cast<Cursos>()
+            // .ToList();
 
-            Alunos alunoteste = new Alunos(NameTextBox.Text, EmailTextBox.Text, CelTextBox.Text, CpfTextBox.Text, DatNascTextBox.Text, cursosSelecionados);
-           Alunos.ListaAlunos.Add(new Alunos(NameTextBox.Text, EmailTextBox.Text, CelTextBox.Text, CpfTextBox.Text, DatNascTextBox.Text, cursosSelecionados));
-           MessageBox.Show("Aluno cadastrado com sucesso!");
-       
+            //Alunos alunoteste = new Alunos(NameTextBox.Text, EmailTextBox.Text, CelTextBox.Text, CpfTextBox.Text, DatNascTextBox.Text, cursosSelecionados);
+            //Alunos.ListaAlunos.Add(new Alunos(NameTextBox.Text, EmailTextBox.Text, CelTextBox.Text, CpfTextBox.Text, DatNascTextBox.Text, cursosSelecionados));
+            //MessageBox.Show("Aluno cadastrado com sucesso!");
+            try
+            {
+                List<Cursos> cursosSelecionados = CheckListCursosAlunos.CheckedItems
+                    .Cast<Cursos>()
+                    .ToList();
+
+                Alunos novoAluno = new Alunos(
+                    NameTextBox.Text,
+                    EmailTextBox.Text,
+                    CelTextBox.Text,
+                    CpfTextBox.Text,
+                    DatNascTextBox.Text,
+                    cursosSelecionados
+                );
+
+                Alunos.ListaAlunos.Add(novoAluno);
+                MessageBox.Show("Aluno cadastrado com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao cadastrar aluno: " + ex.Message);
+            }
+
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -116,24 +138,30 @@ namespace teste
 
         private void CadastrarCurso(object sender, EventArgs e)
         {
-
-            Cursos curso = new Cursos(NomeCursoTxtBox.Text, int.Parse(CHTextBox.Text));
-            Cursos.ListaCursos.Add(curso);
-            MessageBox.Show("Curso cadastrado com sucesso! \n");
-
-            List<Cursos> listaCursos = Cursos.ListaCursos.ToList();
-
-            CursosProf.Items.Clear();
-            foreach (Cursos c in Cursos.ListaCursos)
+            try
             {
-                CursosProf.Items.Add(c);
+                int cargaHoraria = int.Parse(CHTextBox.Text);
+                Cursos curso = new Cursos(NomeCursoTxtBox.Text, cargaHoraria);
+
+                Cursos.ListaCursos.Add(curso);
+                MessageBox.Show("Curso cadastrado com sucesso!");
+
+                CursosProf.Items.Clear();
+                CheckListCursosAlunos.Items.Clear();
+
+                foreach (Cursos c in Cursos.ListaCursos)
+                {
+                    CursosProf.Items.Add(c);
+                    CheckListCursosAlunos.Items.Add(c);
+                }
             }
-
-
-            CheckListCursosAlunos.Items.Clear();
-            foreach (Cursos c in Cursos.ListaCursos)
+            catch (FormatException)
             {
-                CheckListCursosAlunos.Items.Add(c);
+                MessageBox.Show("A carga horária deve ser um número inteiro válido.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao cadastrar curso:\n" + ex.Message);
             }
         }
 
@@ -144,12 +172,27 @@ namespace teste
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Cursos cursoProfessor = (Cursos)CursosProf.SelectedItem;
+            try
+            {
+                Cursos cursoProfessor = (Cursos)CursosProf.SelectedItem;
 
-            Professores professor = new Professores(NomeProf.Text, EmailProf.Text, TelProf.Text, cpfProf.Text, DtNascProf.Text, cursoProfessor);
+                Professores professor = new Professores(
+                    NomeProf.Text,
+                    EmailProf.Text,
+                    TelProf.Text,
+                    cpfProf.Text,
+                    DtNascProf.Text,
+                    cursoProfessor
+                );
 
-            MessageBox.Show("Professor cadastrado com sucesso! \n");
+                MessageBox.Show("Professor cadastrado com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao cadastrar professor:\n" + ex.Message);
+            }
         }
+
 
         private void CursosProf_SelectedIndexChanged(object sender, EventArgs e)
         {

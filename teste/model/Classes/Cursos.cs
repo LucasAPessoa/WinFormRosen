@@ -17,7 +17,13 @@ namespace teste.model.classes
 
         public Cursos(string nome, int cargaHoraria)
         {
-            ID = Guid.NewGuid();
+            if (string.IsNullOrWhiteSpace(nome))
+                throw new Exception("O nome do curso não pode estar vazio.");
+
+            if (cargaHoraria <= 0)
+                throw new Exception("A carga horária deve ser maior que zero.");
+
+            ID = (ListaCursos.Count + 1).ToString("D4");
             Nome = nome;
             CargaHoraria = cargaHoraria;
         }
