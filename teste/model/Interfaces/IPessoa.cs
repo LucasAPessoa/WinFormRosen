@@ -13,6 +13,6 @@ namespace teste.model.Interfaces
         string Phone { get; set;  }
         string CPF { get; set;  }
         string DataNascimento { get; set;  }
-        Guid Matricula { get; set; }
+        string Matricula { get; set; }
     }
 }

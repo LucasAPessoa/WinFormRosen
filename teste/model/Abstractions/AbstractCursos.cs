@@ -11,6 +11,7 @@ namespace teste.model.Abstractions
     {
         public Guid ID { get; set; } = Guid.NewGuid();
         public string Nome { get; set; }
+        public int CargaHoraria { get; set; }
 
         public abstract void ExibirDados();
     }

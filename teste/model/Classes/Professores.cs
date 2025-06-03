@@ -12,9 +12,29 @@ namespace teste.model.classes
     {
         
         public static List<Professores> ListaProfessores { get; set; } = new List<Professores>();
-        // Default constructor
+
         public Professores()
         {
+        }
+
+        public Professores(string name, string email, string phone, string cpf, string dataNascimento, Cursos curso)
+        {
+            Name = name;
+            Email = email;
+            Phone = phone;
+            CPF = cpf;
+            DataNascimento = dataNascimento;
+            Matricula = (ListaProfessores.Count +1).ToString();
+
+            if (!ListaProfessores.Contains(this))
+            {
+                ListaProfessores.Add(this);
+                curso.Professor = this;    
+            }
+            else
+            {
+                throw new Exception("Professor já cadastrado.");
+            }
         }
     }
     

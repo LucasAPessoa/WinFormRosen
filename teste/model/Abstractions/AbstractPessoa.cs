@@ -16,7 +16,7 @@ namespace teste.model.Abstractions
 		public string Phone { get; set; }
 		public string CPF { get; set; }
 		public string DataNascimento { get; set; }
-		public Guid Matricula { get; set; } = Guid.NewGuid();
+		public string Matricula { get; set; }
 		public AbstractPessoa() { }
 
 		public void ExibirDados()
