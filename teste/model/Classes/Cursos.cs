@@ -28,14 +28,6 @@ namespace teste.model.classes
             CargaHoraria = cargaHoraria;
         }
 
-
-        public override string ToString()
-        {
-            return Nome;
-
-        }
-
-
         public override void ExibirDados()
         {
             MessageBox.Show($"Curso: {ID}");

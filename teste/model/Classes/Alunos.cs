@@ -47,18 +47,5 @@ namespace teste.model.classes
         }
 
 
-        public static void MatricularAluno(Alunos aluno, Cursos curso)
-        {
-            if (!aluno.CursosMatriculados.Contains(curso))
-            {
-                aluno.CursosMatriculados.Add(curso);
-            } else
-            {
-                MessageBox.Show("Aluno já matriculado neste curso.");
-            }
-
-    
-
-        }
     }
 }
