@@ -188,7 +188,9 @@ namespace teste
         {
             try
             {
-                Cursos cursoProfessor = (Cursos)CursosProf.SelectedItem;
+                List<Cursos> cursosSelecionados = CursosProf.CheckedItems
+                 .OfType<Cursos>()
+                 .ToList();
 
                 Professores professor = new Professores(
                     NomeProf.Text,
@@ -196,7 +198,7 @@ namespace teste
                     TelProf.Text,
                     cpfProf.Text,
                     DtNascProf.Text,
-                    cursoProfessor
+                    cursosSelecionados
                 );
 
                 Professores.ListaProfessores.Add(professor);
@@ -266,20 +268,29 @@ namespace teste
 
         private void AtualizarListaProfessores()
         {
-
-            Cursos cursoProfessor = (Cursos)CursosProf.SelectedItem;
-
             listViewProfessores.Items.Clear();
 
             foreach (var prof in Professores.ListaProfessores)
             {
+                string cursos = string.Join(", ", prof.Cursos.Select(c => c.Nome));
+
                 var item = new ListViewItem(new[]
                 {
-            prof.Matricula, prof.Name, prof.Email, prof.Phone, prof.DataNascimento, cursoProfessor.Nome
-        });
+                prof.Matricula,
+                prof.Name,
+                prof.Email,
+                prof.Phone,
+                prof.DataNascimento,
+                cursos
+            });
 
                 listViewProfessores.Items.Add(item);
             }
+        }
+
+        private void checkedListBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -9,16 +9,14 @@ using teste.model.Interfaces;
 
 namespace teste.model.classes
 {
-    public class Professores: AbstractPessoa
+    public class Professores : AbstractPessoa
     {
-        
         public static List<Professores> ListaProfessores { get; set; } = new List<Professores>();
+        public List<Cursos> Cursos { get; set; } = new List<Cursos>();
 
-        public Professores()
-        {
-        }
+        public Professores() { }
 
-        public Professores(string name, string email, string phone, string cpf, string dataNascimento, Cursos curso)
+        public Professores(string name, string email, string phone, string cpf, string dataNascimento, List<Cursos> cursos)
         {
             if (string.IsNullOrWhiteSpace(name))
                 throw new Exception("O nome não pode estar vazio.");
@@ -37,8 +35,11 @@ namespace teste.model.classes
                 dataNasc > DateTime.Today)
                 throw new Exception("Data de nascimento inválida.");
 
-            if (curso == null)
-                throw new Exception("O curso não pode ser nulo.");
+            if (cursos == null || cursos.Count == 0)
+                throw new Exception("Pelo menos um curso deve ser associado ao professor.");
+
+            if (ListaProfessores.Any(p => p.CPF == cpf))
+                throw new Exception("Professor já cadastrado com este CPF.");
 
             Name = name;
             Email = email;
@@ -47,14 +48,16 @@ namespace teste.model.classes
             DataNascimento = dataNascimento;
             Matricula = "P" + (ListaProfessores.Count + 1).ToString("D4");
 
-            if (ListaProfessores.Any(p => p.CPF == cpf))
-                throw new Exception("Professor já cadastrado com este CPF.");
+                        foreach (var curso in cursos)
+            {
+                if (curso.Professor != null)
+                    throw new Exception($"O curso '{curso.Nome}' já possui um professor.");
 
-            curso.Professor = this;
+                Cursos.Add(curso);
+                curso.Professor = this;
+            }
+
+
         }
-
-
     }
-
 }
-

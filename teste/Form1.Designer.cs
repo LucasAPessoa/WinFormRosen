@@ -39,44 +39,44 @@ namespace teste
         private void InitializeComponent()
         {
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.listViewCursos = new System.Windows.Forms.ListView();
-            this.label10 = new System.Windows.Forms.Label();
-            this.NomeCursoTxtBox = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.CHCurso = new System.Windows.Forms.Label();
-            this.CHTextBox = new System.Windows.Forms.TextBox();
             this.CadCursos = new System.Windows.Forms.Button();
+            this.CHTextBox = new System.Windows.Forms.TextBox();
+            this.NomeCursoTxtBox = new System.Windows.Forms.TextBox();
+            this.CHCurso = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.listViewCursos = new System.Windows.Forms.ListView();
             this.DropCursosProf = new System.Windows.Forms.TabPage();
-            this.listViewProfessores = new System.Windows.Forms.ListView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.NomeProf = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.EmailProf = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.TelProf = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cpfProf = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.DtNascProf = new System.Windows.Forms.TextBox();
-            this.CursosProf = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.DtNascProf = new System.Windows.Forms.TextBox();
+            this.cpfProf = new System.Windows.Forms.TextBox();
+            this.TelProf = new System.Windows.Forms.TextBox();
+            this.EmailProf = new System.Windows.Forms.TextBox();
+            this.NomeProf = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.listViewProfessores = new System.Windows.Forms.ListView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.listViewAlunos = new System.Windows.Forms.ListView();
-            this.NameLabel = new System.Windows.Forms.Label();
-            this.NameTextBox = new System.Windows.Forms.TextBox();
-            this.EmailLabel = new System.Windows.Forms.Label();
-            this.EmailTextBox = new System.Windows.Forms.TextBox();
-            this.CadAluno = new System.Windows.Forms.Button();
-            this.PhoneLabel = new System.Windows.Forms.Label();
-            this.CelTextBox = new System.Windows.Forms.TextBox();
-            this.CpfLabel = new System.Windows.Forms.Label();
-            this.CpfTextBox = new System.Windows.Forms.TextBox();
-            this.DtNascLabel = new System.Windows.Forms.Label();
-            this.DatNascTextBox = new System.Windows.Forms.TextBox();
-            this.CheckListCursosAlunos = new System.Windows.Forms.CheckedListBox();
             this.CursosAluno = new System.Windows.Forms.Label();
+            this.CheckListCursosAlunos = new System.Windows.Forms.CheckedListBox();
+            this.DatNascTextBox = new System.Windows.Forms.TextBox();
+            this.CpfTextBox = new System.Windows.Forms.TextBox();
+            this.CelTextBox = new System.Windows.Forms.TextBox();
+            this.EmailTextBox = new System.Windows.Forms.TextBox();
+            this.NameTextBox = new System.Windows.Forms.TextBox();
+            this.DtNascLabel = new System.Windows.Forms.Label();
+            this.CpfLabel = new System.Windows.Forms.Label();
+            this.PhoneLabel = new System.Windows.Forms.Label();
+            this.CadAluno = new System.Windows.Forms.Button();
+            this.EmailLabel = new System.Windows.Forms.Label();
+            this.NameLabel = new System.Windows.Forms.Label();
+            this.listViewAlunos = new System.Windows.Forms.ListView();
             this.CadAlunos = new System.Windows.Forms.TabControl();
+            this.CursosProf = new System.Windows.Forms.CheckedListBox();
             this.tabPage3.SuspendLayout();
             this.DropCursosProf.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -100,6 +100,57 @@ namespace teste
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
+            // CadCursos
+            // 
+            this.CadCursos.Location = new System.Drawing.Point(251, 85);
+            this.CadCursos.Name = "CadCursos";
+            this.CadCursos.Size = new System.Drawing.Size(99, 23);
+            this.CadCursos.TabIndex = 16;
+            this.CadCursos.Text = "Cadastrar Curso";
+            this.CadCursos.UseVisualStyleBackColor = true;
+            this.CadCursos.Click += new System.EventHandler(this.CadastrarCurso);
+            // 
+            // CHTextBox
+            // 
+            this.CHTextBox.Location = new System.Drawing.Point(94, 35);
+            this.CHTextBox.Name = "CHTextBox";
+            this.CHTextBox.Size = new System.Drawing.Size(256, 20);
+            this.CHTextBox.TabIndex = 15;
+            // 
+            // NomeCursoTxtBox
+            // 
+            this.NomeCursoTxtBox.Location = new System.Drawing.Point(57, 8);
+            this.NomeCursoTxtBox.Name = "NomeCursoTxtBox";
+            this.NomeCursoTxtBox.Size = new System.Drawing.Size(293, 20);
+            this.NomeCursoTxtBox.TabIndex = 12;
+            // 
+            // CHCurso
+            // 
+            this.CHCurso.AutoSize = true;
+            this.CHCurso.Location = new System.Drawing.Point(13, 38);
+            this.CHCurso.Name = "CHCurso";
+            this.CHCurso.Size = new System.Drawing.Size(75, 13);
+            this.CHCurso.TabIndex = 14;
+            this.CHCurso.Text = "Carga Horaria:";
+            this.CHCurso.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(13, 51);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(0, 13);
+            this.label9.TabIndex = 13;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(13, 11);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(38, 13);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Nome:";
+            // 
             // listViewCursos
             // 
             this.listViewCursos.Dock = System.Windows.Forms.DockStyle.Right;
@@ -114,62 +165,11 @@ namespace teste
             this.listViewCursos.View = System.Windows.Forms.View.Details;
             this.listViewCursos.SelectedIndexChanged += new System.EventHandler(this.listViewCursos_SelectedIndexChanged);
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(13, 11);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(38, 13);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Nome:";
-            // 
-            // NomeCursoTxtBox
-            // 
-            this.NomeCursoTxtBox.Location = new System.Drawing.Point(57, 8);
-            this.NomeCursoTxtBox.Name = "NomeCursoTxtBox";
-            this.NomeCursoTxtBox.Size = new System.Drawing.Size(293, 20);
-            this.NomeCursoTxtBox.TabIndex = 12;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 51);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(0, 13);
-            this.label9.TabIndex = 13;
-            // 
-            // CHCurso
-            // 
-            this.CHCurso.AutoSize = true;
-            this.CHCurso.Location = new System.Drawing.Point(13, 38);
-            this.CHCurso.Name = "CHCurso";
-            this.CHCurso.Size = new System.Drawing.Size(75, 13);
-            this.CHCurso.TabIndex = 14;
-            this.CHCurso.Text = "Carga Horaria:";
-            this.CHCurso.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // CHTextBox
-            // 
-            this.CHTextBox.Location = new System.Drawing.Point(94, 35);
-            this.CHTextBox.Name = "CHTextBox";
-            this.CHTextBox.Size = new System.Drawing.Size(256, 20);
-            this.CHTextBox.TabIndex = 15;
-            // 
-            // CadCursos
-            // 
-            this.CadCursos.Location = new System.Drawing.Point(251, 85);
-            this.CadCursos.Name = "CadCursos";
-            this.CadCursos.Size = new System.Drawing.Size(99, 23);
-            this.CadCursos.TabIndex = 16;
-            this.CadCursos.Text = "Cadastrar Curso";
-            this.CadCursos.UseVisualStyleBackColor = true;
-            this.CadCursos.Click += new System.EventHandler(this.CadastrarCurso);
-            // 
             // DropCursosProf
             // 
+            this.DropCursosProf.Controls.Add(this.CursosProf);
             this.DropCursosProf.Controls.Add(this.button1);
             this.DropCursosProf.Controls.Add(this.label6);
-            this.DropCursosProf.Controls.Add(this.CursosProf);
             this.DropCursosProf.Controls.Add(this.DtNascProf);
             this.DropCursosProf.Controls.Add(this.cpfProf);
             this.DropCursosProf.Controls.Add(this.TelProf);
@@ -189,6 +189,105 @@ namespace teste
             this.DropCursosProf.Text = "Professores";
             this.DropCursosProf.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(274, 351);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "Cadastrar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(17, 227);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 13);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Curso:";
+            // 
+            // DtNascProf
+            // 
+            this.DtNascProf.Location = new System.Drawing.Point(130, 180);
+            this.DtNascProf.Name = "DtNascProf";
+            this.DtNascProf.Size = new System.Drawing.Size(219, 20);
+            this.DtNascProf.TabIndex = 20;
+            // 
+            // cpfProf
+            // 
+            this.cpfProf.Location = new System.Drawing.Point(56, 136);
+            this.cpfProf.Name = "cpfProf";
+            this.cpfProf.Size = new System.Drawing.Size(293, 20);
+            this.cpfProf.TabIndex = 18;
+            // 
+            // TelProf
+            // 
+            this.TelProf.Location = new System.Drawing.Point(75, 96);
+            this.TelProf.Name = "TelProf";
+            this.TelProf.Size = new System.Drawing.Size(274, 20);
+            this.TelProf.TabIndex = 16;
+            // 
+            // EmailProf
+            // 
+            this.EmailProf.Location = new System.Drawing.Point(56, 58);
+            this.EmailProf.Name = "EmailProf";
+            this.EmailProf.Size = new System.Drawing.Size(293, 20);
+            this.EmailProf.TabIndex = 14;
+            // 
+            // NomeProf
+            // 
+            this.NomeProf.Location = new System.Drawing.Point(56, 17);
+            this.NomeProf.Name = "NomeProf";
+            this.NomeProf.Size = new System.Drawing.Size(293, 20);
+            this.NomeProf.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 183);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 13);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Data de Nascimento:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 139);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "CPF:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(17, 99);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Telefone:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 62);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Email:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(17, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Nome:";
+            // 
             // listViewProfessores
             // 
             this.listViewProfessores.Dock = System.Windows.Forms.DockStyle.Right;
@@ -202,115 +301,6 @@ namespace teste
             this.listViewProfessores.UseCompatibleStateImageBehavior = false;
             this.listViewProfessores.View = System.Windows.Forms.View.Details;
             this.listViewProfessores.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 21);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 13);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Nome:";
-            // 
-            // NomeProf
-            // 
-            this.NomeProf.Location = new System.Drawing.Point(56, 17);
-            this.NomeProf.Name = "NomeProf";
-            this.NomeProf.Size = new System.Drawing.Size(293, 20);
-            this.NomeProf.TabIndex = 12;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 62);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Email:";
-            // 
-            // EmailProf
-            // 
-            this.EmailProf.Location = new System.Drawing.Point(56, 58);
-            this.EmailProf.Name = "EmailProf";
-            this.EmailProf.Size = new System.Drawing.Size(293, 20);
-            this.EmailProf.TabIndex = 14;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 99);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Telefone:";
-            // 
-            // TelProf
-            // 
-            this.TelProf.Location = new System.Drawing.Point(75, 96);
-            this.TelProf.Name = "TelProf";
-            this.TelProf.Size = new System.Drawing.Size(274, 20);
-            this.TelProf.TabIndex = 16;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 139);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 13);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "CPF:";
-            // 
-            // cpfProf
-            // 
-            this.cpfProf.Location = new System.Drawing.Point(56, 136);
-            this.cpfProf.Name = "cpfProf";
-            this.cpfProf.Size = new System.Drawing.Size(293, 20);
-            this.cpfProf.TabIndex = 18;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 183);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 13);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Data de Nascimento:";
-            // 
-            // DtNascProf
-            // 
-            this.DtNascProf.Location = new System.Drawing.Point(130, 180);
-            this.DtNascProf.Name = "DtNascProf";
-            this.DtNascProf.Size = new System.Drawing.Size(219, 20);
-            this.DtNascProf.TabIndex = 20;
-            // 
-            // CursosProf
-            // 
-            this.CursosProf.FormattingEnabled = true;
-            this.CursosProf.Location = new System.Drawing.Point(60, 224);
-            this.CursosProf.Name = "CursosProf";
-            this.CursosProf.Size = new System.Drawing.Size(121, 21);
-            this.CursosProf.TabIndex = 24;
-            this.CursosProf.Text = "Selecione um curso";
-            this.CursosProf.SelectedIndexChanged += new System.EventHandler(this.CursosProf_SelectedIndexChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 227);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 13);
-            this.label6.TabIndex = 25;
-            this.label6.Text = "Curso:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(274, 281);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Cadastrar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabPage1
             // 
@@ -337,6 +327,123 @@ namespace teste
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // CursosAluno
+            // 
+            this.CursosAluno.AutoSize = true;
+            this.CursosAluno.Location = new System.Drawing.Point(24, 233);
+            this.CursosAluno.Name = "CursosAluno";
+            this.CursosAluno.Size = new System.Drawing.Size(101, 13);
+            this.CursosAluno.TabIndex = 13;
+            this.CursosAluno.Text = "Cursos Disponíveis:";
+            this.CursosAluno.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // CheckListCursosAlunos
+            // 
+            this.CheckListCursosAlunos.CheckOnClick = true;
+            this.CheckListCursosAlunos.FormattingEnabled = true;
+            this.CheckListCursosAlunos.Location = new System.Drawing.Point(27, 249);
+            this.CheckListCursosAlunos.Name = "CheckListCursosAlunos";
+            this.CheckListCursosAlunos.Size = new System.Drawing.Size(329, 94);
+            this.CheckListCursosAlunos.TabIndex = 12;
+            this.CheckListCursosAlunos.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
+            // 
+            // DatNascTextBox
+            // 
+            this.DatNascTextBox.Location = new System.Drawing.Point(137, 189);
+            this.DatNascTextBox.Name = "DatNascTextBox";
+            this.DatNascTextBox.Size = new System.Drawing.Size(219, 20);
+            this.DatNascTextBox.TabIndex = 10;
+            this.DatNascTextBox.TextChanged += new System.EventHandler(this.DatNascTextBox_TextChanged);
+            // 
+            // CpfTextBox
+            // 
+            this.CpfTextBox.Location = new System.Drawing.Point(63, 145);
+            this.CpfTextBox.Name = "CpfTextBox";
+            this.CpfTextBox.Size = new System.Drawing.Size(293, 20);
+            this.CpfTextBox.TabIndex = 8;
+            // 
+            // CelTextBox
+            // 
+            this.CelTextBox.Location = new System.Drawing.Point(82, 105);
+            this.CelTextBox.Name = "CelTextBox";
+            this.CelTextBox.Size = new System.Drawing.Size(274, 20);
+            this.CelTextBox.TabIndex = 6;
+            this.CelTextBox.TextChanged += new System.EventHandler(this.CelTextBox_TextChanged);
+            // 
+            // EmailTextBox
+            // 
+            this.EmailTextBox.Location = new System.Drawing.Point(63, 67);
+            this.EmailTextBox.Name = "EmailTextBox";
+            this.EmailTextBox.Size = new System.Drawing.Size(293, 20);
+            this.EmailTextBox.TabIndex = 3;
+            this.EmailTextBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // NameTextBox
+            // 
+            this.NameTextBox.Location = new System.Drawing.Point(63, 26);
+            this.NameTextBox.Name = "NameTextBox";
+            this.NameTextBox.Size = new System.Drawing.Size(293, 20);
+            this.NameTextBox.TabIndex = 1;
+            // 
+            // DtNascLabel
+            // 
+            this.DtNascLabel.AutoSize = true;
+            this.DtNascLabel.Location = new System.Drawing.Point(24, 192);
+            this.DtNascLabel.Name = "DtNascLabel";
+            this.DtNascLabel.Size = new System.Drawing.Size(107, 13);
+            this.DtNascLabel.TabIndex = 9;
+            this.DtNascLabel.Text = "Data de Nascimento:";
+            this.DtNascLabel.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // CpfLabel
+            // 
+            this.CpfLabel.AutoSize = true;
+            this.CpfLabel.Location = new System.Drawing.Point(24, 148);
+            this.CpfLabel.Name = "CpfLabel";
+            this.CpfLabel.Size = new System.Drawing.Size(30, 13);
+            this.CpfLabel.TabIndex = 7;
+            this.CpfLabel.Text = "CPF:";
+            this.CpfLabel.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // PhoneLabel
+            // 
+            this.PhoneLabel.AutoSize = true;
+            this.PhoneLabel.Location = new System.Drawing.Point(24, 108);
+            this.PhoneLabel.Name = "PhoneLabel";
+            this.PhoneLabel.Size = new System.Drawing.Size(52, 13);
+            this.PhoneLabel.TabIndex = 5;
+            this.PhoneLabel.Text = "Telefone:";
+            // 
+            // CadAluno
+            // 
+            this.CadAluno.Location = new System.Drawing.Point(281, 371);
+            this.CadAluno.Name = "CadAluno";
+            this.CadAluno.Size = new System.Drawing.Size(75, 23);
+            this.CadAluno.TabIndex = 4;
+            this.CadAluno.Text = "Cadastrar";
+            this.CadAluno.UseVisualStyleBackColor = true;
+            this.CadAluno.Click += new System.EventHandler(this.SendFormButton_Click);
+            // 
+            // EmailLabel
+            // 
+            this.EmailLabel.AutoSize = true;
+            this.EmailLabel.Location = new System.Drawing.Point(24, 71);
+            this.EmailLabel.Name = "EmailLabel";
+            this.EmailLabel.Size = new System.Drawing.Size(35, 13);
+            this.EmailLabel.TabIndex = 2;
+            this.EmailLabel.Text = "Email:";
+            this.EmailLabel.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // NameLabel
+            // 
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Location = new System.Drawing.Point(24, 30);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(38, 13);
+            this.NameLabel.TabIndex = 0;
+            this.NameLabel.Text = "Nome:";
+            this.NameLabel.Click += new System.EventHandler(this.label1_Click);
+            // 
             // listViewAlunos
             // 
             this.listViewAlunos.Dock = System.Windows.Forms.DockStyle.Right;
@@ -350,123 +457,6 @@ namespace teste
             this.listViewAlunos.UseCompatibleStateImageBehavior = false;
             this.listViewAlunos.View = System.Windows.Forms.View.Details;
             // 
-            // NameLabel
-            // 
-            this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(24, 30);
-            this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(38, 13);
-            this.NameLabel.TabIndex = 0;
-            this.NameLabel.Text = "Nome:";
-            this.NameLabel.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // NameTextBox
-            // 
-            this.NameTextBox.Location = new System.Drawing.Point(63, 26);
-            this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(293, 20);
-            this.NameTextBox.TabIndex = 1;
-            // 
-            // EmailLabel
-            // 
-            this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Location = new System.Drawing.Point(24, 71);
-            this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(35, 13);
-            this.EmailLabel.TabIndex = 2;
-            this.EmailLabel.Text = "Email:";
-            this.EmailLabel.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // EmailTextBox
-            // 
-            this.EmailTextBox.Location = new System.Drawing.Point(63, 67);
-            this.EmailTextBox.Name = "EmailTextBox";
-            this.EmailTextBox.Size = new System.Drawing.Size(293, 20);
-            this.EmailTextBox.TabIndex = 3;
-            this.EmailTextBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // CadAluno
-            // 
-            this.CadAluno.Location = new System.Drawing.Point(281, 371);
-            this.CadAluno.Name = "CadAluno";
-            this.CadAluno.Size = new System.Drawing.Size(75, 23);
-            this.CadAluno.TabIndex = 4;
-            this.CadAluno.Text = "Cadastrar";
-            this.CadAluno.UseVisualStyleBackColor = true;
-            this.CadAluno.Click += new System.EventHandler(this.SendFormButton_Click);
-            // 
-            // PhoneLabel
-            // 
-            this.PhoneLabel.AutoSize = true;
-            this.PhoneLabel.Location = new System.Drawing.Point(24, 108);
-            this.PhoneLabel.Name = "PhoneLabel";
-            this.PhoneLabel.Size = new System.Drawing.Size(52, 13);
-            this.PhoneLabel.TabIndex = 5;
-            this.PhoneLabel.Text = "Telefone:";
-            // 
-            // CelTextBox
-            // 
-            this.CelTextBox.Location = new System.Drawing.Point(82, 105);
-            this.CelTextBox.Name = "CelTextBox";
-            this.CelTextBox.Size = new System.Drawing.Size(274, 20);
-            this.CelTextBox.TabIndex = 6;
-            this.CelTextBox.TextChanged += new System.EventHandler(this.CelTextBox_TextChanged);
-            // 
-            // CpfLabel
-            // 
-            this.CpfLabel.AutoSize = true;
-            this.CpfLabel.Location = new System.Drawing.Point(24, 148);
-            this.CpfLabel.Name = "CpfLabel";
-            this.CpfLabel.Size = new System.Drawing.Size(30, 13);
-            this.CpfLabel.TabIndex = 7;
-            this.CpfLabel.Text = "CPF:";
-            this.CpfLabel.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // CpfTextBox
-            // 
-            this.CpfTextBox.Location = new System.Drawing.Point(63, 145);
-            this.CpfTextBox.Name = "CpfTextBox";
-            this.CpfTextBox.Size = new System.Drawing.Size(293, 20);
-            this.CpfTextBox.TabIndex = 8;
-            // 
-            // DtNascLabel
-            // 
-            this.DtNascLabel.AutoSize = true;
-            this.DtNascLabel.Location = new System.Drawing.Point(24, 192);
-            this.DtNascLabel.Name = "DtNascLabel";
-            this.DtNascLabel.Size = new System.Drawing.Size(107, 13);
-            this.DtNascLabel.TabIndex = 9;
-            this.DtNascLabel.Text = "Data de Nascimento:";
-            this.DtNascLabel.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // DatNascTextBox
-            // 
-            this.DatNascTextBox.Location = new System.Drawing.Point(137, 189);
-            this.DatNascTextBox.Name = "DatNascTextBox";
-            this.DatNascTextBox.Size = new System.Drawing.Size(219, 20);
-            this.DatNascTextBox.TabIndex = 10;
-            this.DatNascTextBox.TextChanged += new System.EventHandler(this.DatNascTextBox_TextChanged);
-            // 
-            // CheckListCursosAlunos
-            // 
-            this.CheckListCursosAlunos.CheckOnClick = true;
-            this.CheckListCursosAlunos.FormattingEnabled = true;
-            this.CheckListCursosAlunos.Location = new System.Drawing.Point(27, 249);
-            this.CheckListCursosAlunos.Name = "CheckListCursosAlunos";
-            this.CheckListCursosAlunos.Size = new System.Drawing.Size(329, 94);
-            this.CheckListCursosAlunos.TabIndex = 12;
-            this.CheckListCursosAlunos.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
-            // 
-            // CursosAluno
-            // 
-            this.CursosAluno.AutoSize = true;
-            this.CursosAluno.Location = new System.Drawing.Point(24, 233);
-            this.CursosAluno.Name = "CursosAluno";
-            this.CursosAluno.Size = new System.Drawing.Size(101, 13);
-            this.CursosAluno.TabIndex = 13;
-            this.CursosAluno.Text = "Cursos Disponíveis:";
-            this.CursosAluno.Click += new System.EventHandler(this.label6_Click);
-            // 
             // CadAlunos
             // 
             this.CadAlunos.Controls.Add(this.tabPage1);
@@ -478,6 +468,16 @@ namespace teste
             this.CadAlunos.Size = new System.Drawing.Size(776, 438);
             this.CadAlunos.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.CadAlunos.TabIndex = 6;
+            // 
+            // CursosProf
+            // 
+            this.CursosProf.CheckOnClick = true;
+            this.CursosProf.FormattingEnabled = true;
+            this.CursosProf.Location = new System.Drawing.Point(56, 227);
+            this.CursosProf.Name = "CursosProf";
+            this.CursosProf.Size = new System.Drawing.Size(293, 94);
+            this.CursosProf.TabIndex = 29;
+            this.CursosProf.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged_1);
             // 
             // Form1
             // 
@@ -512,7 +512,6 @@ namespace teste
         private TabPage DropCursosProf;
         private Button button1;
         private Label label6;
-        private ComboBox CursosProf;
         private TextBox DtNascProf;
         private TextBox cpfProf;
         private TextBox TelProf;
@@ -540,6 +539,7 @@ namespace teste
         private Label NameLabel;
         private ListView listViewAlunos;
         private TabControl CadAlunos;
+        private CheckedListBox CursosProf;
     }
 }
 
