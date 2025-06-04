@@ -15,6 +15,11 @@ namespace teste.model.classes
         public Professores Professor { get; set; }
 
 
+        public override string ToString()
+        {
+            return Nome;
+        }
+
         public Cursos(string nome, int cargaHoraria)
         {
             if (string.IsNullOrWhiteSpace(nome))
@@ -26,6 +31,8 @@ namespace teste.model.classes
             ID = "C" + (ListaCursos.Count + 1).ToString("D4");
             Nome = nome;
             CargaHoraria = cargaHoraria;
+
+            
         }
 
        
