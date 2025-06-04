@@ -37,6 +37,9 @@ namespace teste.model.classes
             if (listaCursos == null || listaCursos.Count == 0)
                 throw new Exception("O aluno deve estar matriculado em pelo menos um curso.");
 
+            if (ListaAlunos.Any(p => p.CPF == cpf))
+                throw new Exception("Aluno já cadastrado com este CPF.");
+
             Name = name;
             Email = email;
             Phone = phone;
