@@ -28,18 +28,7 @@ namespace teste.model.classes
             CargaHoraria = cargaHoraria;
         }
 
-        public override void ExibirDados()
-        {
-            MessageBox.Show($"Curso: {ID}");
-            MessageBox.Show($"Curso: {Nome}");
-            MessageBox.Show($"Carga Horária: {CargaHoraria} horas");
-            MessageBox.Show($"Professor: {Professor.Name}");
-            MessageBox.Show("Alunos:");
-            foreach (var aluno in Alunos)
-            {
-                MessageBox.Show($"- {aluno.Name}");
-            }
-        }
+       
 
     }
 }

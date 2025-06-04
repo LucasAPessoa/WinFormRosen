@@ -48,7 +48,7 @@ namespace teste.model.classes
             DataNascimento = dataNascimento;
             Matricula = "P" + (ListaProfessores.Count + 1).ToString("D4");
 
-                        foreach (var curso in cursos)
+            foreach (var curso in cursos)
             {
                 if (curso.Professor != null)
                     throw new Exception($"O curso '{curso.Nome}' já possui um professor.");

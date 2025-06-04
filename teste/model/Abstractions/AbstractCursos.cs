@@ -13,6 +13,5 @@ namespace teste.model.Abstractions
         public string Nome { get; set; }
         public int CargaHoraria { get; set; }
 
-        public abstract void ExibirDados();
     }
 }

@@ -19,10 +19,7 @@ namespace teste.model.Abstractions
 		public string Matricula { get; set; }
 		public AbstractPessoa() { }
 
-		public void ExibirDados()
-		{
-            MessageBox.Show($"{Name}, {Email}, {CPF}, {Phone}, {DataNascimento}");
-		}
+		
 	}
 	
 		
