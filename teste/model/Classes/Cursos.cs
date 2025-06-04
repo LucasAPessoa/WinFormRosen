@@ -25,6 +25,9 @@ namespace teste.model.classes
             if (string.IsNullOrWhiteSpace(nome))
                 throw new Exception("O nome do curso não pode estar vazio.");
 
+            if (ListaCursos.Any(p => p.Nome == nome))
+                throw new Exception("Curso já cadastrado com este nome.");
+
             if (cargaHoraria <= 0)
                 throw new Exception("A carga horária deve ser maior que zero.");
 
